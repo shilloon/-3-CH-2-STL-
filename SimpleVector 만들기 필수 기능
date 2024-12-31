@@ -30,13 +30,13 @@ private:
 	}
 
 public:
-
+	// 기본 생성자
 	SimpleVector() : currentSize(0), currentCapacity(10){
 	
 		data = new T[currentCapacity];
 		
 	}
-
+	// 크기 지정 0보다 작을 경우 에러 메세지
 	SimpleVector(int capacity) : currentSize(0), currentCapacity(capacity) {
 
 		if (capacity <= 0) {
@@ -47,13 +47,13 @@ public:
 		data = new T[currentCapacity];
 	
 	}
-
+	// 소멸자
 	~SimpleVector() {
 
 		delete[] data;
 
 	}
-
+	// 값 추가
 	void push_back(const T& value) {
 
 		if (currentSize == currentCapacity)
@@ -62,20 +62,20 @@ public:
 		data[currentSize++] = value;
 
 	}
-
+	// 마지막 저장값 제거
 	void pop_back() {
 
 		if (currentSize > 0)
 			currentSize--;
 
 	}
-
+	// 현재 크기 반환
 	int size() const {
 
 		return currentSize;
 
 	}
-
+	// 현재 용량 반환
 	int capacity() const {
 
 		return currentCapacity;
