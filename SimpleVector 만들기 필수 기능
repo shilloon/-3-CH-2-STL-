@@ -13,7 +13,7 @@ private:
 	T* data;
 
 	void resize() {
-	
+		// 데이터의 크기를 2배로 늘렸다
 		int newCapacity = currentCapacity * 2;
 		T* newData = new T[newCapacity];
 
